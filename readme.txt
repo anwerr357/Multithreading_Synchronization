@@ -1,1 +1,0 @@
-g++ without_sync.cpp -o without_sync

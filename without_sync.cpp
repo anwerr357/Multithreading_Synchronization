@@ -14,13 +14,17 @@ void withdraw(int amount) {
         cout << "Fonds insuffisants pour retirer " << amount << endl;
     }
 }
-
+void deposit(int amount) {
+    balance += amount;
+    cout << "Dépôt de " << amount << ". Nouveau solde : " << balance << endl;
+}
 int main() {
     thread t1(withdraw, 70);
     thread t2(withdraw, 70);
-
+    //thread t3(deposit ,50);
     t1.join();
     t2.join();
+    //t3.join();
 
     cout << "Solde final : " << balance << endl;
     return 0;
